@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Spanish Verb Conjugator
+
+This project uses the free Spanish verb conjugator at Wordreference.com to create a study tool for spanish learners who want to customize their verb studying. Users will be able to choose exactly which moods and tenses to study, and conjugations will be made available both as a simple reference form, as well as in flashcard form.
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
