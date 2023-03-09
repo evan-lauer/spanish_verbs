@@ -7,7 +7,7 @@ const App = () => {
     const [tables, setTables] = useState();
     useEffect(() => {
 
-        const url = `https://www.wordreference.com/conj/esverbs.aspx?v=hacer`;
+        const url = `https://www.wordreference.com/conj/esverbs.aspx?v=poder`;
 
         var page;
         axios(url)
@@ -73,6 +73,30 @@ const App = () => {
 
                         });
                     }
+                });
+
+                Object.entries(verbObject).forEach((moodEntry) => {
+                    // For each mood:
+                    const [mood, moodValue] = moodEntry;
+                    Object.entries(moodValue).forEach((tenseList) => {
+                        // For each tense:
+                        const [tense, tenseVal] = tenseList;
+                        var tenseTableString = tenseVal.htmlString;
+                        // Matching the table rows which contain the subject and conjugations.
+                        var conjugationsTemp = tenseTableString.match(new RegExp("<tr><th scope=['|\"]row['|\"]>.*?</td></tr>", "gs"));
+                        // Since we know the order of the subjects (yo, tu, el/ella/usted, etc..., we 
+                        // only need the conjugations).
+                        verbObject[mood][tense] = [];
+                        conjugationsTemp.forEach((conjugationString) => {
+                            var conjugation = conjugationString.match(new RegExp("<td>.*?</td>"))[0];
+                            conjugation = conjugation.replaceAll("<td>", "").replaceAll("</td>","").replaceAll("<b>","").replaceAll("</b>","");
+                            conjugation = conjugation.replaceAll("<i>","").replaceAll("</i>","");
+                            //console.log(tense + " " + conjugation);
+                            verbObject[mood][tense].push(conjugation);
+                            delete verbObject[mood][tense]["htmlString"];
+                        });
+
+                    });
                 });
 
                 console.log(verbObject)
