@@ -1,23 +1,10 @@
-import './App.css';
-import Conjugator from './Conjugator';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
-import React from 'react';
 
 
-const App = () => {
-    const [infinitiveVerb, setInfinitiveVerb ] = useState('');
-    const [verbObj, setVerbObj] = useState({});
-
-    const keyPressHandler=(event)=>{
-        if (event.key === "Enter")
-        {
-            conjugateVerb();
-            // Display conjugations 
-        }
-    };
-
-    const conjugateVerb = () => {
+// Expects the verb to be in infinitive form
+const Conjugator = ({ infinitiveVerb }) => {
+    useEffect(() => {
 
         const url = `https://www.wordreference.com/conj/esverbs.aspx?v=` + infinitiveVerb;
 
@@ -115,8 +102,6 @@ const App = () => {
                     });
                 });
                 //console.log(verbObject);
-                setVerbObj(verbObject);
-                console.log(verbObj);
             })
             .catch((err) => {
                 console.log(err.message);
@@ -124,24 +109,11 @@ const App = () => {
 
 
 
-    };
+    }, []);
 
-    const renderData = () => {
-        return JSON.stringify(verbObj,undefined, 4);
-    };
-
-    return(
-        <div id="appContainer">
-            <input
-                className='verbInput'
-                placeholder='Type an infinitive verb!'
-                onChange={(e)=>setInfinitiveVerb(e.target.value)}
-                value={infinitiveVerb}
-                onKeyDown={(e)=>keyPressHandler(e)}
-            />
-            {renderData()}
-        </div>
+    return (
+        <div id="content"></div>
     );
 };
 
-export default App;
+export default Conjugator;
