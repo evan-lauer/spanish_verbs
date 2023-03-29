@@ -1,10 +1,24 @@
-import { useEffect } from 'react';
+import './Conjugator.css';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import React from 'react';
 
 
-// Expects the verb to be in infinitive form
-const Conjugator = ({ infinitiveVerb }) => {
+const Conjugator = ( {verbObj, setVerbObj, infinitiveVerb } ) => {
+    
     useEffect(() => {
+        conjugateVerb();
+    }, [infinitiveVerb]);
+
+    // const keyPressHandler=(event)=>{
+    //     if (event.key === "Enter")
+    //     {
+    //         conjugateVerb();
+    //         // Display conjugations 
+    //     }
+    // };
+
+    const conjugateVerb = () => {
 
         const url = `https://www.wordreference.com/conj/esverbs.aspx?v=` + infinitiveVerb;
 
@@ -102,6 +116,8 @@ const Conjugator = ({ infinitiveVerb }) => {
                     });
                 });
                 //console.log(verbObject);
+                setVerbObj(verbObject);
+                console.log(verbObj);
             })
             .catch((err) => {
                 console.log(err.message);
@@ -109,11 +125,8 @@ const Conjugator = ({ infinitiveVerb }) => {
 
 
 
-    }, []);
-
-    return (
-        <div id="content"></div>
-    );
+    };
+    
 };
 
 export default Conjugator;
