@@ -18,31 +18,32 @@ const App = () => {
     // TODO: Create form for InputForm component
     const formResponse = {
         "Indicativo": {
-            "presente": [1,1,1,1,1,1],
-            "imperfecto": [1,1,1,1,1,1],
-            "pretérito": [1,1,1,1,1,1],
-            "futuro": [1,1,1,1,1,1],
-            "condicional": [1,1,1,1,1,1]
+            "presente": [1,1,1,1,1,1,1],
+            "imperfecto": [1,1,1,1,1,1,1],
+            "pretérito": [1,1,1,1,1,1,1],
+            "futuro": [1,1,1,1,1,1,1],
+            "condicional": [1,1,1,1,1,1,1]
         },
         "Formas compuestas comunes": {
-            "pretérito perfecto": [1,1,1,1,1,1],
-            "pluscuamperfecto": [1,1,1,1,1,1],
-            "futuro perfecto": [1,1,1,1,1,1],
-            "condicional perfecto": [1,1,1,1,1,1]
+            "pretérito perfecto": [1,1,1,1,1,1,1],
+            "pluscuamperfecto": [1,1,1,1,1,1,1],
+            "futuro perfecto": [1,1,1,1,1,1,1],
+            "condicional perfecto": [1,1,1,1,1,1,1]
         },
+        "test hidden tense": {},
         "Subjuntivo": {
-            "presente": [1,1,1,1,1,1],
-            "imperfecto": [1,1,1,1,1,1],
-            "futuro": [1,1,1,1,1,1]
+            "presente": [1,1,1,1,1,1,1],
+            "imperfecto": [1,1,1,1,1,1,1],
+            "futuro": [1,1,1,1,1,1,1]
         },
         "Tiempos compuestos del subjuntivo": {
-            "pretérito perfecto": [1,1,1,1,1,1],
-            "pluscuamperfecto": [1,1,1,1,1,1],
-            // "futuro perfecto": [1,1,1,1,1,1] This is omitted from our conjugations.
+            "pretérito perfecto": [1,1,1,1,1,1,1],
+            "pluscuamperfecto": [1,1,1,1,1,1,1],
+            // "futuro perfecto": [1,1,1,1,1,1,1] This is omitted from our conjugations.
         },
         "Imperativo": {
-            "afirmativo": [0,1,1,1,1,1],
-            "negativo": [0,1,1,1,1,1]
+            "afirmativo": [0,1,1,1,1,1,1],
+            "negativo": [0,1,1,1,1,1,1]
         }
     };
 

@@ -100,6 +100,7 @@ const Conjugator = ( {verbObj, setVerbObj, infinitiveVerb } ) => {
                         // Since we know the order of the subjects (yo, tu, el/ella/usted, etc..., we 
                         // only need the conjugations). So we make an array in our verb object:
                         verbObject[mood][tense] = [];
+                        
                         // And for each subject, we:
                         conjugationsTemp.forEach((conjugationString) => {
                             // Grab the conjugation
@@ -107,6 +108,7 @@ const Conjugator = ( {verbObj, setVerbObj, infinitiveVerb } ) => {
                             // Prune the string a bit (remove bold and italics)
                             conjugation = conjugation.replaceAll("<td>", "").replaceAll("</td>","").replaceAll("<b>","").replaceAll("</b>","");
                             conjugation = conjugation.replaceAll("<i>","").replaceAll("</i>","");
+                            console.log(conjugation);
                             //console.log(tense + " " + conjugation);
                             // Then push the cleaned conj to the verbObject
                             verbObject[mood][tense].push(conjugation);
