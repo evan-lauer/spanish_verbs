@@ -115,9 +115,7 @@ const Conjugator = ( {verbObj, setVerbObj, infinitiveVerb } ) => {
                         });
                     });
                 });
-                //console.log(verbObject);
                 setVerbObj(verbObject);
-                console.log(verbObj);
             })
             .catch((err) => {
                 console.log(err.message);
