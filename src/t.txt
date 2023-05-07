@@ -1,0 +1,5 @@
+Do[xhat = xhat + (1/2)((-1*xhat)+(-1)*(xhat + delt*(-1*xhat)))*delt, {k, 1, numsteps}];
+Do[xhat1 = xhat1 + (1/2)((-1*xhat1)+(-1)*(xhat1 + delt1*(-1*xhat1)))*delt1, {k, 1, numsteps1}];
+Do[xhat2 = xhat2 + (1/2)((-1*xhat2)+(-1)*(xhat2 + delt2*(-1*xhat2)))*delt2, {k, 1, numsteps2}];
+Do[xhat3 = xhat3 + (1/2)((-1*xhat3)+(-1)*(xhat3 + delt3*(-1*xhat3)))*delt3, {k, 1, numsteps3}];
+Do[xhat4 = xhat4 + (1/2)((-1*xhat4)+(-1)*(xhat4 + delt4*(-1*xhat4)))*delt4, {k, 1, numsteps4}];

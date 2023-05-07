@@ -1,0 +1,50 @@
+html
+{
+    font-family: 'Helvetica', 'Arial','Verdana';
+    font-size: 2vh;
+}
+
+body
+{
+    max-width: 70%;
+    margin:auto;
+}
+
+.div
+{
+    display:block;
+}
+
+.moodDiv
+{
+    overflow: auto;
+}
+
+.moodDiv > h4
+{
+    font-size: 1.5em;
+    font-weight: 100;
+    padding: 0.2em;
+    text-align: center;
+    background-color:rgb(144, 215, 218);
+}
+
+
+.moodDiv > table
+{
+    float:left;
+    text-align: center;
+    padding: 0em 1em 1em 1em;
+}
+
+.moodDiv > tr
+{
+    padding: 1em;
+}
+
+.moodDiv tr:nth-child(1) /* Selects the first row, which displays the tense*/
+{
+    font-size: 1.2em;
+    height: 2em;
+    background-color: rgba(182, 198, 245, 0.742);
+}

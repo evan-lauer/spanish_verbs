@@ -22,7 +22,7 @@ const App = () => {
             "imperfecto": [1,1,1,1,1,1,1],
             "pretérito": [1,1,1,1,1,1,1],
             "futuro": [1,1,1,1,1,1,1],
-            "condicional": [1,1,1,1,1,1,1]
+            "condicional": [1,1,1,1,1,1,1] // NOTE: This entire entry should be deleted if the user doesn't want it. Otherwise CSS styling will break
         },
         "Formas compuestas comunes": {
             "pretérito perfecto": [1,1,1,1,1,1,1],

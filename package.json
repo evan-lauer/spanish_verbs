@@ -1,5 +1,6 @@
 {
   "name": "spanish_verbs",
+  "homepage": "https://evanlauer.sites.carleton.edu/spanishverbs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

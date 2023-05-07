@@ -108,7 +108,8 @@ const Conjugator = ( {verbObj, setVerbObj, infinitiveVerb } ) => {
                             // Prune the string a bit (remove bold and italics)
                             conjugation = conjugation.replaceAll("<td>", "").replaceAll("</td>","").replaceAll("<b>","").replaceAll("</b>","");
                             conjugation = conjugation.replaceAll("<i>","").replaceAll("</i>","");
-                            console.log(conjugation);
+                            conjugation = conjugation.replaceAll('<i class="defect">', "");
+                            //console.log(conjugation);
                             //console.log(tense + " " + conjugation);
                             // Then push the cleaned conj to the verbObject
                             verbObject[mood][tense].push(conjugation);

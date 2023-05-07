@@ -1,4 +1,5 @@
 import React from 'react';
+import './VerbRender.css';
 
 const VerbRender = ({verbObj, formResponse}) => {
 
@@ -18,13 +19,17 @@ const VerbRender = ({verbObj, formResponse}) => {
                 displayedVerbs[subjects[ind]] = verbObj[moodName][tenseName][ind];
             }
         }
-        console.log(JSON.stringify(displayedVerbs));
+        
         return (
-            <table className="conjTable" key={i}>
-                <h5>{tenseName}</h5>
-                {Object.keys(displayedVerbs).map((subj, i) => (
-                    <p>{subj + ": " + displayedVerbs[subj]}</p>
-                ))}
+           
+                
+            <table className="conjTable" key={i} style={{width: 100/Object.keys(formResponse[moodName]).length + '%'}}>
+                <tbody>
+                <tr><td>{tenseName}</td></tr>
+                    {Object.keys(displayedVerbs).map((subj, j) => (
+                     <tr key={j}><td>{displayedVerbs[subj]}</td></tr>
+                    ))}
+                </tbody>
             </table>
         );
     };
@@ -41,7 +46,6 @@ const VerbRender = ({verbObj, formResponse}) => {
         }
         var moodSlug = moodName.toLowerCase().replace(' ','-');
         
-        console.log(verbObj);
         return(
             <div className="moodDiv" id={moodSlug} key={i}>
                 <h4>{moodName}</h4>
@@ -53,7 +57,6 @@ const VerbRender = ({verbObj, formResponse}) => {
     };
 
     const renderData = () => {
-        console.log(JSON.stringify(verbObj));
         return JSON.stringify(verbObj,undefined, '\t');
     };
 
