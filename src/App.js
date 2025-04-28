@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Conjugator from './Conjugator';
 import VerbRender from './VerbRender';
 import InputForm from './InputForm';
+
+import dataFetch from './dataFetch';
+
 const App = () => {
     
     const [verbObj, setVerbObj] = useState({});
     const [infinitiveVerb, setInfinitiveVerb ] = useState('');
+    useEffect(async () => {
+        const promise = await dataFetch(infinitiveVerb);
+        setVerbObj(promise);
+    }, [infinitiveVerb]);
 
+console.log(verbObj);
     // For each tense for each given mood, we have an array of six bits, corresponding
     // to the six possible verb subjects. A 1 represents that the user would like to see
     // that subject be conjugated. A 0 represents that the user doesn't want to see it.
@@ -52,11 +60,6 @@ const App = () => {
             <InputForm
                 infinitiveVerb={infinitiveVerb}
                 setInfinitiveVerb={setInfinitiveVerb}
-            />
-            <Conjugator
-                verbObj = {verbObj}
-                setVerbObj = {setVerbObj}
-                infinitiveVerb={infinitiveVerb}
             />
             <VerbRender
                 verbObj = {verbObj}
